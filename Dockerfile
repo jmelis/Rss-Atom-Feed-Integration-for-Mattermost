@@ -1,5 +1,6 @@
-FROM python:2-slim
-RUN adduser --home /code --disabled-password --gecos "" user
+FROM registry.centos.org/centos/python
+
+RUN adduser --home-dir /code user
 
 COPY . /code
 
