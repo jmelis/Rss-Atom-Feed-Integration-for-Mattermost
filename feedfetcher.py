@@ -60,7 +60,8 @@ if __name__ == "__main__":
                 d = feedparser.parse(feed.Url)
                 feed.NewTitle = d['entries'][0]['title']
                 feed.ArticleUrl = d['entries'][0]['link']
-                feed.Description = d['entries'][0]['description']
+                if feed.ShowDescription == True:
+                    feed.Description = d['entries'][0]['description']
                 if feed.LastTitle != feed.NewTitle:
                     if not silent_mode:
                         logging.debug('Feed url: ' + feed.Url)
