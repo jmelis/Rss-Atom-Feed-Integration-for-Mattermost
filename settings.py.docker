@@ -18,7 +18,7 @@ delay_between_pulls = environ.get('RSS_DELAY_PULL', 60 * 5)
 verify_cert = environ.get('RSS_VERIFY_SSL_CERT', False)
 
 # Deactivate logging for debug purposes
-silent_mode = environ.get('RSS_SILENT_MODE', True)
+silent_mode = environ.get('RSS_SILENT_MODE', False)
 
 # Name of the user that responds to integration commands
 integration_bot_name = environ.get('INTEGRATION_BOT_NAME', 'RSS-Bot')
@@ -38,7 +38,7 @@ skip_init_article = environ.get('RSS_SKIP_INIT_ARTICLE', True)
 # Default settings for the feeds
 default_show_name = environ.get('RSS_SHOW_NAME', True)
 default_show_title = environ.get('RSS_SHOW_TITLE', True)
-default_show_description = environ.get('RSS_SHOW_DESCR', True)
+default_show_description = environ.get('RSS_SHOW_DESCR', False)
 default_show_url = environ.get('RSS_SHOW_URL', True)
 default_channel = environ['MATTERMOST_CHANNEL']
 
