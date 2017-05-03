@@ -12,7 +12,7 @@ mattermost_webhook_url = environ['MATTERMOST_HOOK_URL']
 mattermost_integration_token = environ.get('MATTERMOST_CMD_TOKEN' ,'')
 
 # Set the delay between feed pulls to your needs. 5 minutes should be okay.
-delay_between_pulls = environ.get('RSS_DELAY_PULL', 60 * 5)
+delay_between_pulls = int(environ.get('RSS_DELAY_PULL', 60 * 5))
 
 # Trust only signed SSL certificate?
 verify_cert = environ.get('RSS_VERIFY_SSL_CERT', False)
