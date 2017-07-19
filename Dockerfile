@@ -1,4 +1,4 @@
-FROM registry.centos.org/centos/centos
+FROM registry.centos.org/centos/centos:7
 
 # Install dependencies for mattermost-integration-github
 RUN yum -y update && \
@@ -9,7 +9,8 @@ RUN yum -y update && \
 
 # clone the upstream source repo
 RUN git clone https://github.com/bitbackofen/Rss-Atom-Feed-Integration-for-Mattermost &&\
-    pip install -r Rss-Atom-Feed-Integration-for-Mattermost/requirements.txt
+    cd Rss-Atom-Feed-Integration-for-Mattermost && git checkout 8e189eb &&\
+    pip install -r requirements.txt
 
 RUN mv Rss-Atom-Feed-Integration-for-Mattermost/settings.py.docker Rss-Atom-Feed-Integration-for-Mattermost/settings.py
 
